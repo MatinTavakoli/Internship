@@ -13,7 +13,10 @@ from selenium.webdriver.chrome.options import Options
 address = lambda name: os.path.abspath(os.path.join(os.path.dirname(__file__), name))
 
 chrome_options = Options()
-chrome_options.add_argument('--headless')
+
+# --matin-- line commented(TODO: uncomment later on)
+# chrome_options.add_argument('--headless')
+
 chrome_options.add_argument('--window-size=2066x2924')
 
 def filter_out_of_page(boxes, x=2066, y=2924):
@@ -43,7 +46,8 @@ def render(content, output):
     try:
         # todo: use one driver for each process
         driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=address('resources/chromedriver'))
-        html = codecs.open(address('document.html'), 'r', 'utf-8').read()
+        html = codecs.open(address('document.html'), 'r', 'utf-8').read() # --matin-- TODO: check this line of code
+        print('matin says hi!')
         html = html.replace('{{ content }}', content)
 
         with tempfile.NamedTemporaryFile(dir=address('resources'), suffix='.html', delete=True) as html_file:
