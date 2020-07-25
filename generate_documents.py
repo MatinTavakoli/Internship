@@ -12,7 +12,9 @@ import hashlib
 import string
 from glob import glob
 from render_html import render, page_layout, address
-from text_utils import add_keshidegi_line
+
+# --matin-- text_utils library commented(TODO: include library)
+# from text_utils import add_keshidegi_line
 
 ltr = re.compile(r'[ <>*+\t\n\\\/\[\]\(\)0-9۰-۹\.:;،_-]*[A-Za-z]')
 direction = lambda text: 'ltr' if ltr.match(text) else 'rtl'
@@ -124,7 +126,10 @@ def generate_table_layout(texts):
             font_size = random.randint(30, 50)
             ts = random.choice([100, 200, 500])
             text = text[:ts]
-            text = add_keshidegi_line(text)
+
+            # --matin-- text_utils library commented(TODO: include library)
+            # text = add_keshidegi_line(text)
+
             style += 'text-align:justify;'
             if random.random() > .9:
                 style += 'font-style:italic;'
@@ -200,7 +205,10 @@ def generate_multi_columns_layout(texts, images):
             font_size = random.randint(30, 50)
             ts = int(random.choice([100, 200, 500]) / columns)
             text = text[:ts]
-            text = add_keshidegi_line(text)
+
+            # --matin-- text_utils library commented(TODO: include library)
+            # text = add_keshidegi_line(text)
+
             style += 'text-align:justify;'
             if random.random() > .9:
                 style += 'font-style:italic;'
