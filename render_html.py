@@ -58,7 +58,7 @@ def render(content, output):
             print('matin says hello')
             print(html_file.name)
             # --matin-- line commented(TODO: uncomment later on)
-            file = codecs.open(html_file.name, 'w', 'utf-8')
+            # file = codecs.open(html_file.name, 'w', 'utf-8')
             # print(html, file=codecs.open(html_file.name, 'w', 'utf-8'))
             print('matin says hi!')
             driver.get('file://' + html_file.name)
@@ -68,6 +68,7 @@ def render(content, output):
             os.makedirs(os.path.dirname(output))
 
         # save image file
+        print('html of file is {}'.format(content))
         driver.get_screenshot_as_file(output)
         image = Image.open(BytesIO(base64.b64decode(output)))
         image.show()
