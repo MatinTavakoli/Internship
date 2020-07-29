@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3e7aac2c-78db-4257-bbdf-309339cc50bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate_documents.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_documents.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/render_html.py" beforeDir="false" afterPath="$PROJECT_DIR$/render_html.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/texts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/texts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/white_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/white_list.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +102,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

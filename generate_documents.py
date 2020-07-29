@@ -267,6 +267,8 @@ if __name__ == '__main__':
     page_htmls = [create_page_html(texts, images, fonts, random.choice(['tabale', 'multi-col'])) for i in range(5000)]
 
     # render htmls
+    for html in page_htmls:
+        print('matin is printing', address('resources/generated/{}/{}.png'.format(hashed(html)[:2], hashed(html))))
     joblib.Parallel(n_jobs=4, backend='multiprocessing')([joblib.delayed(render)(html, address('resources/generated/{}/{}.png'.format(hashed(html)[:2], hashed(html)))) for html in page_htmls])
 
     # print json names

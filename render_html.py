@@ -10,6 +10,11 @@ import scipy.misc
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
+#matin imports added
+import base64
+from io import BytesIO
+from PIL import Image
+
 address = lambda name: os.path.abspath(os.path.join(os.path.dirname(__file__), name))
 
 chrome_options = Options()
@@ -47,11 +52,15 @@ def render(content, output):
         # todo: use one driver for each process
         driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=address('resources/chromedriver'))
         html = codecs.open(address('document.html'), 'r', 'utf-8').read() # --matin-- TODO: check this line of code
-        print('matin says hi!')
         html = html.replace('{{ content }}', content)
 
         with tempfile.NamedTemporaryFile(dir=address('resources'), suffix='.html', delete=True) as html_file:
-            print(html, file=codecs.open(html_file.name, 'w', 'utf-8'))
+            print('matin says hello')
+            print(html_file.name)
+            # --matin-- line commented(TODO: uncomment later on)
+            file = codecs.open(html_file.name, 'w', 'utf-8')
+            # print(html, file=codecs.open(html_file.name, 'w', 'utf-8'))
+            print('matin says hi!')
             driver.get('file://' + html_file.name)
 
         # create directory
@@ -60,6 +69,8 @@ def render(content, output):
 
         # save image file
         driver.get_screenshot_as_file(output)
+        image = Image.open(BytesIO(base64.b64decode(output)))
+        image.show()
         line_boxes, image_boxes, table_boxes = driver.execute_script('return [lineBoxes, imageBoxes, tableBoxes]')
 
         driver.quit()
