@@ -10,19 +10,18 @@ import scipy.misc
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-#matin imports added
+# --matin-- imports added
 import base64
+import random
 from io import BytesIO
 from PIL import Image
 
 address = lambda name: os.path.abspath(os.path.join(os.path.dirname(__file__), name))
 
 chrome_options = Options()
-
-# --matin-- line commented(TODO: uncomment later on)
-# chrome_options.add_argument('--headless')
-
+chrome_options.add_argument('--headless')
 chrome_options.add_argument('--window-size=2066x2924')
+
 
 def filter_out_of_page(boxes, x=2066, y=2924):
     res = []
@@ -31,9 +30,9 @@ def filter_out_of_page(boxes, x=2066, y=2924):
         y1 = int(b[1])
         w = int(b[2])
         h = int(b[3])
-        
+
         if x1 >= x or y1 >= y:
-            continue 
+            continue
         x2 = int(b[0]) + int(b[2])
         y2 = int(b[1]) + int(b[3])
         dx = dy = 0
@@ -46,12 +45,11 @@ def filter_out_of_page(boxes, x=2066, y=2924):
     return res
 
 
-
 def render(content, output):
     try:
         # todo: use one driver for each process
         driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=address('resources/chromedriver'))
-        html = codecs.open(address('document.html'), 'r', 'utf-8').read() # --matin-- TODO: check this line of code
+        html = codecs.open(address('document.html'), 'r', 'utf-8').read()  # --matin-- TODO: check this line of code
         html = html.replace('{{ content }}', content)
 
         with tempfile.NamedTemporaryFile(dir=address('resources'), suffix='.html', delete=True) as html_file:
@@ -68,11 +66,24 @@ def render(content, output):
             os.makedirs(os.path.dirname(output))
 
         # save image file
-        print('html of file is {}'.format(content))
+
+        # writing in text file (matin)
+        print('html of file is {}'.format(
+            content))  # --matin-- added this line to see html results (TODO: try saving directly in html file)
+        filename = 'randomhtmlfile{}.html'.format(random.randint(1, 1000))
+        with open(filename, 'w') as file:
+            content_lines = content.split('\n')
+            for content_line in content_lines:
+                file.write(content_line + '\n')
+            file.close()
+
+        print('output is {}').format(
+            output)  # --matin-- added this line to see html results (TODO: try saving directly in html file)
         driver.get_screenshot_as_file(output)
         image = Image.open(BytesIO(base64.b64decode(output)))
         image.show()
         line_boxes, image_boxes, table_boxes = driver.execute_script('return [lineBoxes, imageBoxes, tableBoxes]')
+        print('matin is waiting')  # --matin-- printing
 
         driver.quit()
         line_boxes = filter_out_of_page(line_boxes)
@@ -83,8 +94,9 @@ def render(content, output):
         print(json.dumps({
             'image_url': output,
             'document': {'parts': [{'box': ' '.join(map(str, box)), 'type': 'image'} for box in image_boxes] \
-                                + [{'lines': [{'box': ' '.join(map(str, box))} for box in line_boxes], 'type': 'text'}] \
-                                + [{'box': ' '.join(map(str, box)), 'type': 'table'} for box in table_boxes]}
+                                  + [{'lines': [{'box': ' '.join(map(str, box))} for box in line_boxes],
+                                      'type': 'text'}] \
+                                  + [{'box': ' '.join(map(str, box)), 'type': 'table'} for box in table_boxes]}
         }), file=codecs.open(output.replace('.png', '.json'), 'w', 'utf-8'))
 
         # print(html, file=codecs.open(output.replace('.png', '.html'), 'w', 'utf-8'))
@@ -95,7 +107,6 @@ def render(content, output):
 
 
 def page_layout(content, font_files=[]):
-
     fonts = ''
     if len(font_files):
         fonts += """
