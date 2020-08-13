@@ -10,16 +10,17 @@ import scipy.misc
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-# --matin-- imports added
+#--matin-- imports added
+from urllib.parse import quote
 import base64
-import random
 from io import BytesIO
 from PIL import Image
+
 
 address = lambda name: os.path.abspath(os.path.join(os.path.dirname(__file__), name))
 
 chrome_options = Options()
-chrome_options.add_argument('--headless')
+# chrome_options.add_argument('--headless')
 chrome_options.add_argument('--window-size=2066x2924')
 
 
@@ -49,44 +50,21 @@ def render(content, output):
     try:
         # todo: use one driver for each process
         driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=address('resources/chromedriver'))
-        html = codecs.open(address('document.html'), 'r', 'utf-8').read()  # --matin-- TODO: check this line of code
+        html = codecs.open(address('document.html'), 'r', 'utf-8').read()
         html = html.replace('{{ content }}', content)
         with tempfile.NamedTemporaryFile(dir=address('resources'), suffix='.html', delete=True) as html_file:
-            print('matin says hello')
-            print(html_file.name)
-            # --matin-- line commented(TODO: uncomment later on)
-            # file = codecs.open(html_file.name, 'w', 'utf-8')
-            # print(html, file=codecs.open(html_file.name, 'w', 'utf-8'))
-            print('matin says hi!')
-            driver.get('file://' + html_file.name)
+            print(html, file=codecs.open(html_file.name, 'w', 'utf-8'))
+            # driver.get('file://' + html_file.name)
+            driver.get('data:text/html;charset=utf-8, ' + quote(html))
+            image = Image.open(BytesIO(base64.b64decode(driver.get_screenshot_as_base64())))
+            image.show()
         # create directory
         if not os.path.exists(os.path.dirname(output)):
             os.makedirs(os.path.dirname(output))
+
         # save image file
-
-        # writing in text file (matin)
-        print('html of file is {}'.format(
-            content))  # --matin-- added this line to see html results (TODO: try saving directly in html file)
-        filename = 'randomhtmlfile{}.html'.format(random.randint(1, 1000))
-        with open(output.replace(output[output.rindex('\\') + 1:], '') + filename, 'w') as file: # --matin-- saving html in png file directories (TODO: why aren't the png files there?!)
-            content_lines = content.split('\n')
-            i = 1  # --matin-- debugging
-            for content_line in content_lines:
-                print('the third to last line is {}'.format(content_lines[len(content_lines) - 3]))  # --matin-- printing
-                print('the second to last line is {}'.format(content_lines[len(content_lines) - 2]))  # --matin-- printing
-                print('the last line is {}'.format(content_lines[len(content_lines) - 1]))  # --matin-- printing
-                print('this line is {}'.format(content_line))  # --matin-- printing
-                file.write(content_line + '\n') # (TODO: why isn't the html content written in file completely?!)
-                print('matin is writing line #{} (in {} lines)'.format(i, len(content_lines)))  # --matin-- printing
-                i = i + 1  # --matin-- debugging
-            file.close()
-
-        print('output is {}'.format(output))  # --matin-- added this line to see html results (TODO: try saving directly in html file)
-        driver.get_screenshot_as_file(output)  # TODO: check this line (why doesn't this line execute?)
-        image = Image.open(BytesIO(base64.b64decode(output)))
-        image.show()
+        driver.get_screenshot_as_file(output)
         line_boxes, image_boxes, table_boxes = driver.execute_script('return [lineBoxes, imageBoxes, tableBoxes]')
-        print('matin is waiting')  # --matin-- printing
 
         driver.quit()
         line_boxes = filter_out_of_page(line_boxes)
@@ -102,7 +80,7 @@ def render(content, output):
                                   + [{'box': ' '.join(map(str, box)), 'type': 'table'} for box in table_boxes]}
         }), file=codecs.open(output.replace('.png', '.json'), 'w', 'utf-8'))
 
-        # print(html, file=codecs.open(output.replace('.png', '.html'), 'w', 'utf-8'))
+        print(html, file=codecs.open(output.replace('.png', '.html'), 'w', 'utf-8'))
 
         return line_boxes, image_boxes, table_boxes
     except:
