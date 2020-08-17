@@ -13,9 +13,6 @@ from selenium.webdriver.chrome.options import Options
 
 #--matin-- imports added
 from urllib.parse import quote
-import base64
-from io import BytesIO
-from PIL import Image
 
 address = lambda name: os.path.abspath(os.path.join(os.path.dirname(__file__), name))
 
@@ -58,18 +55,16 @@ def render(content, output):
             os.makedirs(os.path.dirname(output))
 
         # method 1
-        with tempfile.NamedTemporaryFile(dir=address('resources'), suffix='.html', delete=True) as html_file:
+        with tempfile.NamedTemporaryFile(dir=address('resources'), suffix='.html', delete=False) as html_file:
             print(html, file=codecs.open(html_file.name, 'w', 'utf-8'))
             driver.get('file://' + html_file.name)
             driver.get_screenshot_as_file(output)
 
         # method 2
         # driver.get('data:text/html;charset=utf-8, ' + quote(html))
-        # image = Image.open(BytesIO(base64.b64decode(driver.get_screenshot_as_base64())))
         # driver.get_screenshot_as_file(output)
 
         # save image file
-        # driver.get_screenshot_as_file(output) # --matin-- testing
         line_boxes, image_boxes, table_boxes = driver.execute_script('return [lineBoxes, imageBoxes, tableBoxes]')
 
         driver.quit()
@@ -91,7 +86,7 @@ def render(content, output):
         return line_boxes, image_boxes, table_boxes
     except:
         print('error', output)
-        print(traceback.print_exc())
+        print(traceback.print_exc()) # --matin-- more detail on what's gone wrong
 
 
 def page_layout(content, font_files=[]):
