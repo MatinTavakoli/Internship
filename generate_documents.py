@@ -16,7 +16,7 @@ from glob import glob
 from render_html import render, page_layout, address
 
 # --matin-- text_utils library commented(TODO: include library)
-# from text_utils import add_keshidegi_line
+from text_utils import add_keshidegi_line # --matin-- uncommented!
 
 ltr = re.compile(r'[ <>*+\t\n\\\/\[\]\(\)0-9۰-۹\.:;،_-]*[A-Za-z]')
 direction = lambda text: 'ltr' if ltr.match(text) else 'rtl'
@@ -132,7 +132,7 @@ def generate_table_layout(texts):
             text = text[:ts]
 
             # --matin-- text_utils library commented(TODO: include library)
-            # text = add_keshidegi_line(text)
+            text = add_keshidegi_line(text) # --matin-- uncommented!
 
             style += 'text-align:justify;'
             if random.random() > .9:
@@ -211,7 +211,7 @@ def generate_multi_columns_layout(texts, images):
             text = text[:ts]
 
             # --matin-- text_utils library commented(TODO: include library)
-            # text = add_keshidegi_line(text)
+            text = add_keshidegi_line(text) # --matin-- uncommented
 
             style += 'text-align:justify;'
             if random.random() > .9:
