@@ -16,16 +16,28 @@ from glob import glob
 from render_html import render, page_layout, address
 
 # --matin-- text_utils library commented(TODO: include library)
-from text_utils import add_keshidegi_line # --matin-- uncommented!
+# from text_utils import add_keshidegi_line
+
+# --matin-- imports added
+from configparser import ConfigParser
 
 ltr = re.compile(r'[ <>*+\t\n\\\/\[\]\(\)0-9۰-۹\.:;،_-]*[A-Za-z]')
 direction = lambda text: 'ltr' if ltr.match(text) else 'rtl'
 hashed = lambda text: hashlib.sha224(text.encode('utf-8')).hexdigest()
 
+config_object = ConfigParser()
+# config_object.read('table-config.ini')
+# config_gen_table = config_object['gen_table']
+# config_generate_table_layout = config_object['generate_table_layout']
+# config_generate_multi_column_layout = config_object['generate_multi_columns_layout']
 
 def gen_table(text, rows, columns, border, outer_border, top_header, right_header, full_width=0, header_words=2):
-    idx = random.choice(string.ascii_uppercase) + ''.join(
-        random.choice(string.ascii_uppercase + string.digits) for _ in range(4))
+    os.system('python table-config.py')
+    config_object.read('table-config.ini')
+    config_gen_table = config_object['gen_table']
+
+    idx = config_gen_table['idx'] # --matin-- reads from config file!
+
     content = '<table id="{}">'.format(idx)
     pt = 0
     words = text.split(' ')
@@ -33,9 +45,7 @@ def gen_table(text, rows, columns, border, outer_border, top_header, right_heade
         header_words = 1
 
     if top_header:
-        style = ''
-        if random.randint(0, 1):
-            style = ' style="border-bottom: 1px solid"'
+        style = config_gen_table['top_header-style'] # --matin-- reads from config file!
 
         rows -= 1
         content += '<tr{}>'.format(style)
@@ -132,7 +142,7 @@ def generate_table_layout(texts):
             text = text[:ts]
 
             # --matin-- text_utils library commented(TODO: include library)
-            text = add_keshidegi_line(text) # --matin-- uncommented!
+            # text = add_keshidegi_line(text)
 
             style += 'text-align:justify;'
             if random.random() > .9:
@@ -211,7 +221,7 @@ def generate_multi_columns_layout(texts, images):
             text = text[:ts]
 
             # --matin-- text_utils library commented(TODO: include library)
-            text = add_keshidegi_line(text) # --matin-- uncommented
+            # text = add_keshidegi_line(text)
 
             style += 'text-align:justify;'
             if random.random() > .9:
@@ -268,9 +278,6 @@ if __name__ == '__main__':
     # create htmls
     page_htmls = [create_page_html(texts, images, fonts, random.choice(['tabale', 'multi-col'])) for i in range(5000)]
 
-    begin = time.time()
-    joblib.Parallel(n_jobs=10, backend='multiprocessing')([joblib.delayed(render)(html, address('resources/generated/{}/{}.png'.format(hashed(html)[:2], hashed(html)))) for html in page_htmls[:1000]])
-    end = time.time()
-    print('pages rendered in {} seconds'.format(end - begin))
+    joblib.Parallel(n_jobs=4, backend='multiprocessing')([joblib.delayed(render)(html, address('resources/generated/{}/{}.png'.format(hashed(html)[:2], hashed(html)))) for html in page_htmls])
     # print json names
     # print([os.path.abspath(filename) for filename in glob('resources/generated/*/*.json')])
