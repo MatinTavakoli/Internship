@@ -2,10 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e7aac2c-78db-4257-bbdf-309339cc50bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/generate_documents2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/generated/03/039d38a188cf76f815faa9da861d3c183f4b1b51037607ea7be2471d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/generated/1f/1fff2bdd9ba845124f1b9a4329edaa60b6705c4bf73ac4aa7118529a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/generated/48/4871fcc301f36db8bb82eb53ad7402990ea834a972175201cca35f35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/generated/5d/5da8d79aaeb9638b6b364fa376d87437c8edd12be93912a455e93710.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/generated/68/68d0549b8d6b5730bc8d34be0974efe955ba47f78aea2975dd888c88.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/generated/72/7250e0dd95d2de50e17cc0f19635db7ae8d53ca8102d2bc17c04d6ff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/generated/c7/c7ec7db0f4196b9411b201768c2887923217245496dd2ddbba69cdd4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/generated/e9/e916e916adbc3411885d6c2d491741b80e374482c5973ab9554b2ef9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tmp5lefq81x.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tmp98sygvpa.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tmpc412bhr8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tmph34rd162.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tmpjyshcaup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tmpn02_a4ho.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tmpu00rfboh.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tmpvi6rsjm8.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generate_documents.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_documents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/05/0509797974649b93116052b0d56c0654b80eaed6dcd248cb768b926a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/33/331638cdbd7892ff970e2f2742a31e92d33c33a560955cda788043f2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/3d/3db9e7df41985233e8a3c630a1a127439f594dd5163d04d954c84300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/69/69e5b1ca3df579bd6b9b1f7bb81aa56fd7624999d704c9ab0cb538a4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/6d/6dfee86b70d9eb75bbed42a9418b56851392b7c1a944cd3c1b86a47a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/95/95cce9a94403e1cb0093f44107e6a232a0b93b1ba48daf7f9190c6fb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/96/96402b37df4065af17c4285d2d96153e115a789545df841dbd2271ee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/e6/e6c2691021dfc7c03e2eb6752aba3e508b9e29d46422a6228ae25673.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmp16avwjn1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmp8owb4vrb.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmp9usf0fya.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpb5hgmslh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpcl39yewe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpczymrgw7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmph23_v3id.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmps9vmc9ib.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/table-config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/table-config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table-config.py" beforeDir="false" afterPath="$PROJECT_DIR$/table-config.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +89,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_documents.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="generate_documents2 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Internship" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/AUT/6th Semester/Internship/initial_version" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/AUT/6th Semester/Internship/initial_version/generate_documents2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -128,34 +181,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="text_utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Internship" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/text_utils.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.generate_documents" />
         <item itemvalue="Python.table-config" />
-        <item itemvalue="Python.render_html" />
         <item itemvalue="Python.generate_documents2" />
-        <item itemvalue="Python.text_utils" />
+        <item itemvalue="Python.generate_documents2 (1)" />
+        <item itemvalue="Python.render_html" />
       </list>
     </recent_temporary>
   </component>
