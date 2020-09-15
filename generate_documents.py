@@ -33,7 +33,7 @@ def gen_table(text, rows, columns, border, outer_border, top_header, right_heade
     config_object.read(config_file)
     config_gen_table = config_object['gen_table']
 
-    idx = config_gen_table['idx'] # --matin-- reads from config file!
+    idx = config_gen_table['idx']  # --matin-- reads from config file!
 
     content = '<table id="{}">'.format(idx)
     pt = 0
@@ -69,15 +69,20 @@ def gen_table(text, rows, columns, border, outer_border, top_header, right_heade
             pt += nw
 
         for _ in range(columns):
-            c = config_gen_table['c']  # --matin-- reads from config file!
+            # os.system('python table-config.py')  # --matin-- testing
+            c = int(config_gen_table['c'])  # --matin-- reads from config file!
             r = ''
             if c == 1:
                 r = config_gen_table['r1']  # --matin-- reads from config file!
-            if c == 2:
-                r =config_gen_table['r2']  # --matin-- reads from config file!
-            if c == 3:
+            elif c == 2:
+                r = config_gen_table['r2']  # --matin-- reads from config file!
+            elif c == 3:
                 r = config_gen_table['r3']  # --matin-- reads from config file!
-            content += '<td>{}</td>'.format(r)
+            print(r)  # --matin-- testing
+            if r != '':
+                content += '<td>{}</td>'.format(r)
+            else:
+                content += '<td></td>'
 
         content += '</tr>'
 
@@ -100,7 +105,8 @@ def gen_table(text, rows, columns, border, outer_border, top_header, right_heade
     elif border == 3:
         content += config_gen_table['border3'].format(idx)  # --matin-- reads from config file!
 
-    content += '</style>'
+    # content += '</style>'
+    content += 'table, td, th {border: 1px solid black;}</style>'  # --matin-- changed lined to generate grid lines in all tables!
 
     return content
 
@@ -156,11 +162,11 @@ def generate_table_layout(texts, config_file):
         b = config_generate_table_layout['b']  # --matin-- reads from config file!
         ob = config_generate_table_layout['ob']  # --matin-- reads from config file!
 
-        #select one of the two methods for top header
+        # select one of the two methods for top header
         th = config_generate_table_layout['th1']  # --matin-- reads from config file!
         th = config_generate_table_layout['th2']  # --matin-- reads from config file!
 
-        #select one of the two methods for right header
+        # select one of the two methods for right header
         rh = config_generate_table_layout['rh1']  # --matin-- reads from config file!
         rh = config_generate_table_layout['rh2']  # --matin-- reads from config file!
 

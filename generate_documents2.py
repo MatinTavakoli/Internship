@@ -88,7 +88,8 @@ def gen_table(text, rows, columns, border, outer_border, top_header, right_heade
     elif border == 3:
         content += '#{0} td,#{0} th {{border: solid;border-width: 0 1px}}'.format(idx)
     
-    content += '</style>'
+    # content += '</style>'
+    content += 'table, td, th {border: 1px solid black;}</style>' # --matin-- changed lined to generate grid lines in all tables!
 
     return content
 
