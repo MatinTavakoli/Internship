@@ -3,26 +3,39 @@
   <component name="ChangeListManager">
     <list default="true" id="3e7aac2c-78db-4257-bbdf-309339cc50bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generate_documents.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_documents.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_documents2.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_documents2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/generated/04/04150993ce153150901dfd8c4105367b3ef32407df15bd4e5fe5df76.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/generated/20/20d98991dc61bed465f86ef635667dd9cf6dc775ce73f1db314b0154.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/generated/67/679268c21cae37f686aacf0cf357bd85d47d89931df5dc09df9d4238.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/generated/95/954f863ad0c252155a817868a138a2175f6bacab814fbef399ff2559.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/generated/b7/b7bbc25952f758bdc8cf603ce6767188b35f1a7af34f7c10b44fe1af.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/generated/b8/b8cb2041d63a382376725086d39283cc9a771a55d69d598f13579d15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/generated/d3/d38a6e6a4ff89830c9e7ef72f587d4057044c08bb1ea788440cf77eb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/generated/dd/dd6b1b157ed62972355d3fe6363c75bcf3bedf3050697fc03f51dd26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/tmp14u96d5i.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/tmp46_h2kc1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/tmpanhx22ex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/tmpghae107s.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/tmpgviz9c3c.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/tmpljbyyjpx.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/tmpqijklczn.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/tmpyblwwyfa.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/table-config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/table-config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/31/31de286773a39b5b92c6419532b88ba9a3f2cd8142649574ef57e638.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/36/36ccf034c014b4ff2b9894047440cd8df9631e2a024ec013309702e3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/65/6556ca1441585bc12b9d9c0eff31af098d05575876e4397beb2a43f7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/6a/6a45aebbe38300273ee095157401a16621f458873d4013fa5dd5dd2f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/75/75daa3a220081258a3238682a097ab517e6b439c4aea9ae2a7425822.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/83/83a1d7fda9946187e16532865095ada3c222be129e2c993488fcc9fe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/8d/8def0b0941fce47a9bef722b6193bc56a3594423ddc40dff668867cf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/9d/9d0bb3a3deff24645001e60a34d2cc649397e064a446619bb970fed6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/af/aff9d0d64a1de5e4d4f7a6dd301025599af068728b5236f5d94a0aa4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/b8/b8752fd1581212bc5eed0d658b9cbad635f77bb930d37772ff3185b1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/c8/c8c88b6b641ed35b5614f2ed5716c374ed21015af64145adfea00eef.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/d4/d4070a801125909e947704a246f0a9094e1f47e37269fedbcef8b903.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/d5/d5888e8dae5e363094434537c2e8124f618a4dcc0079a551faee1bed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/d8/d8f630982fef1fe200f9ba07108ec02874dd03e9edbaa3b356c613db.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/e1/e1bb43e2f279bafbf9a39683b51f976f24725ba8014180004b0780e6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/generated/fe/fe4bc1f38ebfd0c116a6b69c96b328a1755f75c5f491cfcbd933c504.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmp1dapsipz.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmp5i8jcvmp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmp8fswt8n2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmp8i7d389m.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpath0pic9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpazrv8rrm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpbo2iw69c.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpec1y_r9z.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpj6ucou6t.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpjjowtlaw.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpjkssh3re.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmplan02rfd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpuopw2itr.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpw5tpy96u.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpxizi6rdw.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tmpyyx1z98t.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/table-config.py" beforeDir="false" afterPath="$PROJECT_DIR$/table-config.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,7 +74,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.generate_documents">
+  <component name="RunManager" selected="Python.generate_documents2">
     <configuration name="generate_documents" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Internship" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -169,9 +182,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.generate_documents2" />
         <item itemvalue="Python.generate_documents" />
         <item itemvalue="Python.table-config" />
-        <item itemvalue="Python.generate_documents2" />
         <item itemvalue="Python.generate_documents2 (1)" />
         <item itemvalue="Python.render_html" />
       </list>

@@ -8,11 +8,23 @@ config_object = ConfigParser()
 config_object['gen_table'] = {
     'idx': random.choice(string.ascii_uppercase) + ''.join(
         random.choice(string.ascii_uppercase + string.digits) for _ in range(4)),
-    'top_header-style': ' style="border-bottom: 1px solid"' if random.randint(0, 1) else '',
-    'right_header-style': ' style="border-left: 1px solid"' if random.randint(0, 1) else '',
-    'c': random.choice([1, 2, 3]),
-    'r1': random.randint(10, 1000),
-    'r2': random.randint(0, 10),
+
+    'top_header-style_lb': 0,  # --matin-- randint lower bound
+    'top_header-style_ub': 1,  # --matin-- randint upper bound
+
+    'right_header-style_lb': 0,  # --matin-- randint lower bound
+    'right_header-style_ub': 1,  # --matin-- randint upper bound
+
+
+    'c': [1, 2, 3],  # --matin-- random choice
+
+    'r1_lb': 10, # --matin-- randint lower bound
+    'r1_ub': 1000,  # --matin-- randint upper bound
+
+    'r2_lb': 0, # --matin-- randint lower bound
+    'r2_ub': 10,  # --matin-- randint upper bound
+
+    'r2': random.randint(0, 10),  #dfjo9dpffd
     'r3': random.choice(['', '', '-', '۰']),
     'border_space': random.randint(5, 35),
     'border1': '#{0} td,#{0} th {{border: 1px solid}}',

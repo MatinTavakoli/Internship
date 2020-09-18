@@ -42,7 +42,10 @@ def gen_table(text, rows, columns, border, outer_border, top_header, right_heade
         header_words = 1
 
     if top_header:
-        style = config_gen_table['top_header-style']  # --matin-- reads from config file!
+        if random.randint(config_gen_table['top_header-style_lb'], config_gen_table['top_header-style_ub']):  # --matin-- reads from config file!
+            style = ' style="border-bottom: 1px solid"'
+        else:
+            style = ''
 
         rows -= 1
         content += '<tr{}>'.format(style)
@@ -62,23 +65,24 @@ def gen_table(text, rows, columns, border, outer_border, top_header, right_heade
         content += '<tr>'
 
         if right_header:
-            style = config_gen_table['right_header-style']  # --matin-- reads from config file!
+            if random.randint(config_gen_table['right_header-style_lb'], config_gen_table['right_header-style_ub']):  # --matin-- reads from config file!
+                style = ' style="border-left: 1px solid"'
+            else:
+                style = ''
 
             nw = random.randint(1, header_words)
             content += '<th{}>{}</th>'.format(style, ' '.join(words[pt:pt + nw]))
             pt += nw
 
         for _ in range(columns):
-            # os.system('python table-config.py')  # --matin-- testing
-            c = int(config_gen_table['c'])  # --matin-- reads from config file!
+            c = random.choice(config_gen_table['c'])  # --matin-- reads from config file!
             r = ''
             if c == 1:
-                r = config_gen_table['r1']  # --matin-- reads from config file!
+                r = random.randint(config_gen_table['r1_lb'], config_gen_table['r1_ub'])  # --matin-- reads from config file!
             elif c == 2:
-                r = config_gen_table['r2']  # --matin-- reads from config file!
+                r = random.randint(config_gen_table['r2_lb'], config_gen_table['r2_ub'])  # --matin-- reads from config file!
             elif c == 3:
-                r = config_gen_table['r3']  # --matin-- reads from config file!
-            print(r)  # --matin-- testing
+                r = random.randint(config_gen_table['r3_lb'], config_gen_table['r3_ub'])  # --matin-- reads from config file!
             if r != '':
                 content += '<td>{}</td>'.format(r)
             else:
