@@ -82,7 +82,7 @@ def gen_table(text, rows, columns, border, outer_border, top_header, right_heade
             elif c == 2:
                 r = random.randint(config_gen_table['r2_lb'], config_gen_table['r2_ub'])  # --matin-- reads from config file!
             elif c == 3:
-                r = random.randint(config_gen_table['r3_lb'], config_gen_table['r3_ub'])  # --matin-- reads from config file!
+                r = random.choice(config_gen_table['r3'])  # --matin-- reads from config file!
             if r != '':
                 content += '<td>{}</td>'.format(r)
             else:
@@ -97,7 +97,7 @@ def gen_table(text, rows, columns, border, outer_border, top_header, right_heade
     if full_width:
         content += '#{} {{width: 100%}}'.format(idx)
     else:
-        border_space = config_gen_table['border_space']  # --matin-- reads from config file!
+        border_space = random.randint(config_gen_table['border_space_lb'], config_gen_table['border_space_ub'])  # --matin-- reads from config file!
         content += '#{0} td,#{0} th {{padding: {1}px}}'.format(idx, border_space)
 
     # if border:
@@ -123,20 +123,20 @@ def generate_table_layout(texts, config_file):
     content = ''
     while (lines < 10):
         style = ''
-        item = config_generate_table_layout['item']  # --matin-- reads from config file!
+        item = random.choice(config_generate_table_layout['item'])  # --matin-- reads from config file!
         font_size = ''
         text = next(texts)
         if item == 'h1':
-            font_size = config_generate_table_layout['font_size1']  # --matin-- reads from config file!
-            ts = int(config_generate_table_layout['ts1'])  # --matin-- reads from config file!
+            font_size = random.randint(config_generate_table_layout['font_size1_lb'], config_generate_table_layout['font_size1_ub'])  # --matin-- reads from config file!
+            ts = random.choice(config_generate_table_layout['ts1'])  # --matin-- reads from config file!
             text = text[:ts]
         elif item == 'h2':
-            font_size = config_generate_table_layout['font_size2']  # --matin-- reads from config file!
-            ts = int(config_generate_table_layout['ts2'])  # --matin-- reads from config file!
+            font_size = random.randint(config_generate_table_layout['font_size2_lb'], config_generate_table_layout['font_size2_ub'])  # --matin-- reads from config file!
+            ts = random.choice(config_generate_table_layout['ts2'])  # --matin-- reads from config file!
             text = text[:ts]
         elif item == 'h3':
-            font_size = config_generate_table_layout['font_size3']  # --matin-- reads from config file!
-            ts = int(config_generate_table_layout['ts3'])  # --matin-- reads from config file!
+            font_size = random.randint(config_generate_table_layout['font_size3_lb'], config_generate_table_layout['font_size3_ub'])  # --matin-- reads from config file!
+            ts = random.choice(config_generate_table_layout['ts3'])  # --matin-- reads from config file!
             text = text[:ts]
 
         if item != '':
@@ -147,8 +147,8 @@ def generate_table_layout(texts, config_file):
         if random.randint(0, 1):
             style = ''
             text = next(texts)
-            font_size = config_generate_table_layout['font_size4']  # --matin-- reads from config file!
-            ts = int(config_generate_table_layout['ts4'])  # --matin-- reads from config file!
+            font_size = random.randint(config_generate_table_layout['font_size4_lb'], config_generate_table_layout['font_size4_ub'])  # --matin-- reads from config file!
+            ts = random.choice(config_generate_table_layout['ts4'])  # --matin-- reads from config file!
             text = text[:ts]
 
             # --matin-- text_utils library commented(TODO: include library)
@@ -162,17 +162,17 @@ def generate_table_layout(texts, config_file):
             content += '<p dir="{1}" style="{2}">{0}</p><br/>'.format(text.strip(u'ـ'), direction(text), style)
 
         r = random.randint(5, 22 - lines)
-        c = int(config_generate_table_layout['c'])  # --matin-- reads from config file!
-        b = config_generate_table_layout['b']  # --matin-- reads from config file!
-        ob = config_generate_table_layout['ob']  # --matin-- reads from config file!
+        c = random.randint(config_generate_table_layout['c_lb'], config_generate_table_layout['c_ub'])  # --matin-- reads from config file!
+        b = random.randint(config_generate_table_layout['b_lb'], config_generate_table_layout['b_ub'])  # --matin-- reads from config file!
+        ob = random.randint(config_generate_table_layout['ob_lb'], config_generate_table_layout['ob_ub'])  # --matin-- reads from config file!
 
         # select one of the two methods for top header
-        th = config_generate_table_layout['th1']  # --matin-- reads from config file!
-        th = config_generate_table_layout['th2']  # --matin-- reads from config file!
+        th = random.randint(config_generate_table_layout['th1_lb'], config_generate_table_layout['th1_ub'])  # --matin-- reads from config file!
+        th = random.choice(config_generate_table_layout['th2'])  # --matin-- reads from config file!
 
         # select one of the two methods for right header
-        rh = config_generate_table_layout['rh1']  # --matin-- reads from config file!
-        rh = config_generate_table_layout['rh2']  # --matin-- reads from config file!
+        rh = random.choice(config_generate_table_layout['rh1'])  # --matin-- reads from config file!
+        rh = random.randint(config_generate_table_layout['rh2_lb'], config_generate_table_layout['rh2_ub'])  # --matin-- reads from config file!
 
         text = next(texts)
         lines += r
@@ -188,12 +188,12 @@ def generate_multi_columns_layout(texts, images, config_file):
     config_generate_table_layout = config_object['generate_multi_columns_layout']
 
     content = ''
-    columns = int(config_generate_table_layout['columns'])
-    column_gap = config_generate_table_layout['column_gap']
+    columns = random.randint(config_generate_table_layout['columns_lb'], config_generate_table_layout['columns_ub'])  # --matin-- reads from config file!
+    column_gap = round(random.uniform(config_generate_table_layout['column_gap_randint_lb'], config_generate_table_layout['column_gap_randint_ub']), config_generate_table_layout['column_gap_round_prec'])  # --matin-- reads from config file!
     content += '<style> #content {{column-count: {};column-gap: {}em}}</style>'.format(columns, column_gap)
     item, last_item = '', ''
     while len(content) < 7000:
-        item = config_generate_table_layout['item']
+        item = random.choice(config_generate_table_layout['item'])  # --matin-- reads from config file!
 
         if item.startswith('h') and last_item.startswith('h'):
             continue
@@ -210,12 +210,12 @@ def generate_multi_columns_layout(texts, images, config_file):
             continue
 
         if item == 'table':
-            r = int(config_generate_table_layout['r'])
-            c = int(config_generate_table_layout['c'])
-            b = config_generate_table_layout['b']
-            ob = config_generate_table_layout['ob']
-            th = config_generate_table_layout['th']
-            rh = config_generate_table_layout['rh']
+            r = random.randint(config_generate_table_layout['r_lb'], config_generate_table_layout['r_ub'])  # --matin-- reads from config file!
+            c = random.randint(config_generate_table_layout['c'])  # --matin-- reads from config file!
+            b = random.randint(config_generate_table_layout['b'])  # --matin-- reads from config file!
+            ob = random.randint(config_generate_table_layout['ob'])  # --matin-- reads from config file!
+            th = random.randint(config_generate_table_layout['th'])  # --matin-- reads from config file!
+            rh = random.randint(config_generate_table_layout['rh'])  # --matin-- reads from config file!
             table = gen_table(text, r, c, b, ob, th, rh, config_file, 1)  # --matin-- pass config file as parameter!
             content += '<div style="text-align:center;overflow:hidden">{}</div>'.format(table)
             continue
@@ -223,20 +223,20 @@ def generate_multi_columns_layout(texts, images, config_file):
         style = ''
         font_size = ''
         if item == 'h1':
-            font_size = config_generate_table_layout['font_size1']
-            ts = int(int(config_generate_table_layout['ts1']) / columns)
+            font_size = random.randint(config_generate_table_layout['font_size1'])
+            ts = int(random.choice(config_generate_table_layout['ts1']) / columns)
             text = text[:ts]
         if item == 'h2':
-            font_size = config_generate_table_layout['font_size2']
-            ts = int(int(config_generate_table_layout['ts2']) / columns)
+            font_size = random.randint(config_generate_table_layout['font_size2'])
+            ts = int(random.choice(config_generate_table_layout['ts2']) / columns)
             text = text[:ts]
         if item == 'h3':
-            font_size = config_generate_table_layout['font_size3']
-            ts = int(int(config_generate_table_layout['ts3']) / columns)
+            font_size = random.randint(config_generate_table_layout['font_size3'])
+            ts = int(random.choice(config_generate_table_layout['ts3']) / columns)
             text = text[:ts]
         if item == 'p':
-            font_size = config_generate_table_layout['font_sizep']
-            ts = int(int(config_generate_table_layout['tsp']) / columns)
+            font_size = random.randint(config_generate_table_layout['font_sizep'])
+            ts = int(random.choice(config_generate_table_layout['tsp']) / columns)
             text = text[:ts]
 
             # --matin-- text_utils library commented(TODO: include library)
