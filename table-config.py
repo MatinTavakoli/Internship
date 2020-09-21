@@ -83,7 +83,7 @@ config_object['generate_multi_columns_layout'] = {
     'columns_ub': 3,  # --matin-- randint upper bound
 
     'column_gap_randint_lb': 1,  # --matin-- randint lower bound
-    'column_gap_randint_up': 2,  # --matin-- randint upper bound
+    'column_gap_randint_ub': 2,  # --matin-- randint upper bound
     'column_gap_round_prec': 2,  # --matin-- round precision
 
 
