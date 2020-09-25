@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	html, body, p, h1, h2, h3 {
+		margin: 0;
+		overflow: hidden;
+		word-break: break-word;
+	}
+</style>
+<body>
+
+
+    <style>
+    
+        @font-face {
+            font-family: AlefbaFont;
+            font-weight: normal;
+            src: url(fonts/Arial.ttf) format('truetype');
+        }
+        html {
+            font-family: AlefbaFont;
+        }
+        table {
+            border-collapse:collapse;
+            max-width: 100%;
+            margin: auto;
+        }
+        th, tr {
+            text-align: center;
+        }
+        
+        @font-face {
+            font-family: AlefbaFont;
+            font-weight: bold;
+            src: url(fonts/ArialBold.ttf) format('truetype');
+        }
+        
+        @font-face {
+            font-family: AlefbaFont;
+            font-style: italic;
+            src: url(fonts/ArialItalic.ttf) format('truetype');
+        }
+        
+
+    html {
+        direction: rtl;
+        font-size: 40px;
+    }
+
+    body {
+        height: 2924;
+    }
+
+    span {
+        line-height: 1.2;
+    }
+
+    p {
+        padding-bottom: 20px;
+    }
+
+    h1 {
+        padding: 20px 0 10px;
+    }
+
+    img {
+        max-width: 100%;
+        margin: 20px 0;
+    }
+
+    #content {
+        padding: 10px;
+    }
+
+    #content > * {
+        overflow: hidden;
+        max-width: 100%;
+        break-inside: avoid-column;
+    }
+    </style>
+
+    <div id="content">
+    <h3 dir="rtl" style="font-size:48px;">فارس: علی حسینی در مورد آداب صحیح غذا خوردن از دیدگاه طب سنتی گفت: بهتر است با ش</h3><br/><p dir="rtl" style="text-align:justify;font-size:49px;">اطلاع یا آگاهش در کوتاه‌ترین تعریف، «داده‌های پردازش نشده» است. داده‌ها مواد خام بالقوه معنی‌داری هستند که ما آن‌ها را در راستای شناخت و فهم هر مفهوم مادی یا غیر مادی، به واسطه روش‌های پژوهشی، و با استفاده از ابزارهای شناختی به دست می‌آوریم. داده یک شرح مقدماتی از یک پدیده، اتفاق، فعالیت یا تعاملات است که ثبت شده‌است، دسته‌بندی شده و ذخیره شده‌است؛ اما سازماندهی نشده و برای یک منظور مشخص آماده نشده است. داده‌ها عناصر اصلی اطلاعات هستند. داده‌ها در صورتی به اطلاعات تبدیل می‌شوند که افراد بخواهند </p><br/><div style="text-align:center;overflow:hidden"><table id="AQ57V"><tr><th>A (named</th><th>,</th><th>plural</th><th>As, A's,</th><th>as, a's</th></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table> <style>#AQ57V {border: 1px solid}#AQ57V td,#AQ57V th {padding: 32px}#AQ57V td,#AQ57V th {border: solid;border-width: 0 1px}table, td, th {border: 1px solid black;}</style></div><br/><br/>
+    </div>
+    
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="../../jquery.min.js"></script>
+<script type="text/javascript">
+
+var lineBoxes, imageBoxes, tableBoxes;
+$("h1, h2, h3, h4, h5, h6, p, td, th").each(function() {
+	var html = $(this).html().replace(/([^\s|^\-|^\.|^\\|^\/]+[\s|\-|\.|\\|\/]*|.+$)/g, "<span>$1</span>");
+	$(this).html(html);
+
+	$('span').each(function() {
+		if ($(this).parent()[0].offsetWidth < $(this)[0].offsetWidth || 
+			$(this).text().length > 15 ||
+			parseFloat($(this).css('height')) > parseFloat($(this).css('lineHeight')) * 1.2)
+			$(this).remove();
+	});
+});
+
+$(window).on('load', function () {
+
+	function getElementLines(e, element) {
+		element = $(element);
+		lines = [];
+		var html = element.html();
+		var win_height = 2924;
+
+		// var html = element.html().replace(/([^\s|^\-|^\.|^\\|^\/]+[\s|\-|\.|\\|\/]*|[^\s|^\-|^\.|^\\|^\/]+$)/g, "<span>$1</span>");
+
+        var t_offset_top = 0;
+        var t_offset_left = 0;
+
+        if (element.is('td, th')) {
+            t_offset_top = element[0].parentElement.parentElement.parentElement.offsetTop;
+            t_offset_left = element[0].parentElement.parentElement.parentElement.offsetLeft;
+        }
+
+		var offset = -1, spans = element.find("span");
+		var top = -1, bottom, left, right;
+		for (var i = 0; i < spans.length; i++) {
+			span = spans[i];
+
+			newOffset = span.offsetTop;
+
+            var td_offset_top = 0;
+            var td_offset_left = 0;
+
+            if (element.is('td, th')) {
+                td_offset_top = span.parentElement.offsetTop + t_offset_top;
+                td_offset_left = span.parentElement.offsetLeft + t_offset_left;
+
+                newOffset += td_offset_top;
+            }
+
+			if (newOffset + span.offsetHeight >= win_height) {
+				span.style.opacity = 0;
+				// span.style.color = 'white';
+				continue;
+			}
+
+			if (newOffset !== offset) {
+				offset = newOffset;
+
+				if (top > 0)
+					lines.push([left, top - 2, right - left, bottom - top + 2]);
+
+				top = offset;
+				bottom = offset + span.offsetHeight;
+                left = span.offsetLeft + td_offset_left;
+				right = left + span.offsetWidth;
+				
+			}
+            if (span.offsetLeft + td_offset_left < left)
+                left = span.offsetLeft + td_offset_left;
+			if (span.offsetLeft + td_offset_left + span.offsetWidth > right)
+				right = span.offsetLeft + td_offset_left + span.offsetWidth;
+		}
+
+		if (top > 0 && bottom < win_height)
+			lines.push([left, top - 2, right - left, bottom - top + 2]);
+
+		return lines;
+	}
+	win_height = 2924;
+
+	imageBoxes = $('img').map(function(e, element) {
+		return [[element.offsetLeft, element.offsetTop, element.offsetWidth, Math.min(element.offsetHeight, win_height - element.offsetTop - 1)]];
+	});
+
+	lineBoxes = $("h1, h2, h3, h4, h5, h6, p, td, th").map(getElementLines);
+
+	tableBoxes = $('table').map(function(e, element) {
+		return [[element.offsetLeft, element.offsetTop, element.offsetWidth, Math.min(element.offsetHeight, win_height - element.offsetTop - 1)]];
+	});
+});
+</script>
+</body>
+</html>
+

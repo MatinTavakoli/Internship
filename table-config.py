@@ -16,7 +16,7 @@ config_object['gen_table'] = {
     'right_header-style_ub': 1,  # --matin-- randint upper bound
 
 
-    'c': [1, 2, 3],  # --matin-- random choice
+    'c': '1,2,3',  # --matin-- random choice
 
     'r1_lb': 10,  # --matin-- randint lower bound
     'r1_ub': 1000,  # --matin-- randint upper bound
@@ -24,7 +24,7 @@ config_object['gen_table'] = {
     'r2_lb': 0,  # --matin-- randint lower bound
     'r2_ub': 10,  # --matin-- randint upper bound
 
-    'r3': ['', '', '-', '.'],  # --matin-- random choice (replaced '۰' with '.')
+    'r3': ',,-,.',  # --matin-- random choice (replaced '۰' with '.')
 
 
     'border_space_lb': 5,  # --matin-- randint lower bound
@@ -38,7 +38,7 @@ config_object['gen_table'] = {
 
 config_object['generate_table_layout'] = {
 
-    'item': ['', 'h1', 'h2', 'h3'],  # --matin-- random choice
+    'item': ',h1,h2,h3',  # --matin-- random choice
 
 
     'font_size1_lb': 60,  # --matin-- randint lower bound
@@ -54,10 +54,10 @@ config_object['generate_table_layout'] = {
     'font_size4_ub': 50,  # --matin-- randint upper bound
 
 
-    'ts1': [40, 60, 80],  # --matin-- random choice
-    'ts2': [60, 80, 100],  # --matin-- random choice
-    'ts3': [80, 100, 120],  # --matin-- random choice
-    'ts4': [100, 200, 500],  # --matin-- random choice
+    'ts1': '40,60,80',  # --matin-- random choice
+    'ts2': '60,80,100',  # --matin-- random choice
+    'ts3': '80,100,120',  # --matin-- random choice
+    'ts4': '100,200,500',  # --matin-- random choice
 
 
     'c_lb': 4,  # --matin-- randint lower bound
@@ -71,9 +71,9 @@ config_object['generate_table_layout'] = {
 
     'th1_lb': 0,  # --matin-- randint lower bound
     'th1_ub': 1,  # --matin-- randint upper bound
-    'th2': [1, 1, 0],  # --matin-- random choice
+    'th2': '1,1,0',  # --matin-- random choice
 
-    'rh1': [1, 1, 0],  # --matin-- random choice
+    'rh1': '1,1,0',  # --matin-- random choice
     'rh2_lb': 0,  # --matin-- randint lower bound
     'rh2_ub': 1,  # --matin-- randint upper bound
 }
@@ -123,7 +123,7 @@ config_object['generate_multi_columns_layout'] = {
     'ts1': [40, 60, 80],  # --matin-- random choice
     'ts2': [60, 80, 100],  # --matin-- random choice
     'ts3': [80, 100, 120],  # --matin-- random choice
-    'ts4': [100, 200, 500]  # --matin-- random choice
+    'tsp': '100 200 500'  # --matin-- random choice
 }
 
 #Write the above sections to config.ini file
