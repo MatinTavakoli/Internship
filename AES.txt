@@ -1,0 +1,46 @@
+plainttext:
+Hagrid was black the whole time.
+48 61 67 72 69 64 20 77 61 73 20 62 6c 61 63 6b 20 74 68 65 20 77 68 6f 6c 65 20 74 69 6d 65 2e
+
+Secret Key:
++KbPeShVmYq3t6w9
+2b 4b 62 50 65 53 68 56 6d 59 71 33 74 36 77 39
+
+Secret Key block:
+2b 65 6d 74
+4b 53 59 36
+62 68 71 77
+50 56 33 39
+
+
+first block:
+48 69 61 6c
+61 64 73 61
+67 20 20 63
+72 77 62 6b
+
+first block output:
+08 b9 12 c3
+bc 07 75 51
+41 e6 ca 78
+d4 a5 9a aa
+
+08 bc 41 d4 b9 07 e6 a5 12 75 ca 9a c3 51 78 aa
+
+second block:
+20 20 6c 69
+74 77 65 6d
+68 68 20 65
+65 6f 74 2e
+
+second block output:
+c5 70 3e 0a
+53 4e f5 4a
+6d 7f 65 f5
+82 8c c9 26
+
+c5 53 6d 82 70 4e 7f 8c 3e f5 65 c9 0a 4a f5 26
+
+ciphertext: 08 bc 41 d4 b9 07 e6 a5 12 75 ca 9a c3 51 78 aa c5 53 6d 82 70 4e 7f 8c 3e f5 65 c9 0a 4a f5 26
+¼AÔ¹æ¥uÊÃQxªÅSmpN>õeÉ
+Jõ&
